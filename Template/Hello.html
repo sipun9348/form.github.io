@@ -1,0 +1,53 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link rel="stylesheet" href="{%static 'hello.css'%}">
+</head>
+<body>
+    <h1>
+       Database data
+    </h1>
+    {%if student%}
+        <table>
+            <thead>
+                <td>
+                    NAME
+                </td>
+                <td>
+                    AGE
+                </td>
+                <td>
+                    ADDRESS
+                </td>
+                <td>
+                    E-MAIL
+                </td>
+            </thead>
+            {%for s in student%}
+            <tr>
+                <td>
+                    {{s.name}}
+                </td>
+                <td>
+                    {{s.age}}
+                </td>
+                <td>
+                    {{s.address}}
+                </td>
+                <td>
+                    {{s.email}}
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%else%}
+        <p>
+            no data found
+        </p>
+        {%endif%}
+</body>
+</html>
